@@ -1,0 +1,8 @@
+{
+    "LiveServer.settings.port": 5500,
+    "liveServer.settings.https": {
+    "enable": true, //set it true to enable the feature.
+    "cert": "/Users/wadieabbas/Documents/Development Projects/FlagYak/flagyak.com/https/localhost.pem", //full path of the certificate
+    "key": "/Users/wadieabbas/Documents/Development Projects/FlagYak/flagyak.com/https/localhost-key.pem", //full path of the private key
+    }
+}

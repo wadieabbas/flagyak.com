@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="hsl(240, 1%, 19%);">
+    <title>FlagYak: Daily Flag-based Guessing Game</title>
+    <meta name="”robots”" content="index, follow">
+    <meta property="og:image" content="assets/favicon/favicon-32x32.png">
+    <meta property="og:title" content="FlagYak - Daily Flag Guessing Game">
+    <meta name="description" content="Test your knowledge of flags with our daily guessing game! Guess the country represented by the flag and challenge yourself to improve your score. Play now and expand your global knowledge!">
+    <script src="instructions-modal.js" defer></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.svg">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/favicon/favicon-32x32.png">
+
+</head>
+<body>
+    <div data-alert-container class="alert-container"></div>
+    <div data-gom-overlay class="score-modal-overlay">
+        <div data-gom class="score-data-modal">
+            <div data-gom-content class="main-modal-content">
+                <div class="modal-header">
+                    <div class="modal-header-text">
+                        <h2 data-gom-title class="modal-title">Scorecard</h2>
+                        <h3 data-gom-subtitle class="modal-subtitle"></h3>
+                    </div>
+                    <button data-gom-x-button class="close-modal-button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="score-card-container">
+                        <div data-gom-scorecard class="scorecard">
+                            <div data-gom-item class="score-cell">
+                                <img src="assets/emojis/world-map.png" alt="continent-world-map-emoji">
+                            </div>
+                            <div data-gom-item data-gom-row1 class="score-cell">
+                                <img src="assets/emojis/white-square.png" alt="empty-square-emoji">
+                            </div>
+                            <div data-gom-item data-gom-row1 class="score-cell">
+                                <img src="assets/emojis/white-square.png" alt="empty-square-emoji">
+                            </div>
+                            <div data-gom-item data-gom-row1 class="score-cell">
+                                <img src="assets/emojis/white-square.png" alt="empty-square-emoji">
+                            </div>
+                            <div data-gom-item class="score-cell">
+                                <img src="assets/emojis/map-pin.png" alt="country-map-pin-emoji">
+                            </div>
+                            <div data-gom-item data-gom-row2 class="score-cell">
+                                <img src="assets/emojis/white-square.png" alt="empty-square-emoji">
+                            </div>
+                            <div data-gom-item data-gom-row2 class="score-cell">
+                                <img src="assets/emojis/white-square.png" alt="empty-square-emoji">
+                            </div>
+                            <div data-gom-item data-gom-row2 class="score-cell">
+                                <img src="assets/emojis/white-square.png" alt="empty-square-emoji">
+                            </div>
+                            <div data-gom-item class="score-cell">
+                                <img src="assets/emojis/classical-building.png" alt="capital-classical-building-emoji">
+                            </div>
+                            <div data-gom-item data-gom-row3 class="score-cell">
+                                <img src="assets/emojis/white-square.png" alt="empty-square-emoji">
+                            </div>
+                            <div data-gom-item data-gom-row3 class="score-cell">
+                                <img src="assets/emojis/white-square.png" alt="empty-square-emoji">
+                            </div>
+                            <div data-gom-item data-gom-row3 class="score-cell">
+                                <img src="assets/emojis/white-square.png" alt="empty-square-emoji">
+                            </div>
+                            
+                        </div>
+                        <div class="share-content">
+                            <button data-gom-share-button class="share-score-button"><strong>Share Your Score</strong></button>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="modal-footer">
+                    <p>© Copyright 2023 - <a href="https://www.flagyak.com">flagyak.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <dialog data-im class="main-modal">
+        <div data-im-content class="main-modal-content">
+            <div class="modal-header">
+                <div class="modal-header-text">
+                    <h2 class="modal-title">How To Play</h2>
+                    <h3 class="modal-subtitle">FlagYak, the daily flag trivia game</h3>
+                </div>
+                <button data-im-x-button class="close-modal-button">&times;</button>
+    
+            </div>
+            <div class="modal-body">
+                <ol>
+                    <li>Each day there is a new flag that is displayed.</li>
+                    <li>You will be prompted with 3 questions to guess the continent, country, and capital.</li>
+                    <li>You have 3 attempts to answer each question correctly.</li>
+                </ol>
+                <div class="feedback-container">
+                    <p>Got feedback?</p>
+                    <button data-im-email-button class="modal-email-button">Email Us</button>
+                </div>
+            </div>
+            <hr>
+            <div class="modal-footer">
+                <p>© Copyright 2023 - <a href="https://www.flagyak.com">flagyak.com</a></p>
+            </div>
+        </div>
+        
+    </dialog>
+    <header>
+        <div class="header-container">
+            <div class="header-logo-container header-responsive">
+                <img src="assets/flagyak-logo.svg" alt="flagyak-logo" class="header-links" id="flagyak-logo">
+            </div>
+            <div class="header-symbol-container header-responsive">
+                <img class src="assets/flagyak-symbol.svg" alt="flagyak-symbol" id="flagyak-symbol">    
+            </div>
+            <div class="header-menu-container header-responsive">
+                <button data-question-button class="header-menu-button">
+                    <img class src="assets/help-icon.svg" alt="help-icon" class="header-links" id="flagyak-icon">
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="main-container">
+        <div class="content-container">
+            <div class="flag-container">
+                <img data-todays-flag src="assets/placeholder-flag.svg" alt="guess-the-flag" class="flag">
+            </div>
+            <div data-guess-prompt class="guess-prompt"></div>
+            <input data-input data-state="" readonly="readonly" class="guess-input-container" type="text" placeholder="Start typing your answer!"></input>
+
+            <div class="game-tracker-container">
+                <div data-continent-tracker class="progress-tracker-container">
+                    <div data-tracker-icon class="tracker-icon-container">
+                        <svg class="tracker-icon" width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21.9832 0.991699C10.3853 0.991699 0.991577 10.3855 0.991577 21.9833C0.991577 33.5812 10.3853 42.975 21.9832 42.975C33.5811 42.975 42.9749 33.5812 42.9749 21.9833C42.9749 10.3855 33.5811 0.991699 21.9832 0.991699ZM21.9832 6.23961C23.715 6.23961 25.3419 6.71192 26.9163 7.23671C25.8142 8.2863 24.5547 9.23092 24.7646 10.1755C24.9745 11.1202 28.3857 10.8578 28.3857 12.7995C28.3857 14.2164 26.1816 14.6363 27.7034 16.2631C29.5402 18.0999 24.3448 21.4061 24.2398 23.8201C24.0824 28.1759 28.6481 28.9106 32.2691 28.9106C34.4732 28.9106 35.0505 29.9602 34.8931 31.2197C32.0592 35.2606 27.2311 37.7796 21.9307 37.7796C19.9365 37.7796 18.0998 37.3072 16.368 36.625C17.5225 34.3159 14.8985 29.7503 12.432 28.2808C11.225 27.0738 8.65353 27.5461 7.18411 26.9689C6.7118 25.5519 6.23949 24.135 6.18701 22.5606C6.34445 22.2982 6.60684 22.0883 7.02667 22.0883C8.02378 22.0883 9.38823 24.0825 10.1229 23.8726C11.0676 23.6627 6.23949 16.9978 8.49609 15.6858C9.54567 15.0561 11.6448 17.7325 10.9626 14.8462C10.3329 12.1698 12.8519 13.3768 14.4262 12.6945C15.7907 12.1173 16.7878 10.5429 15.1085 9.59827C14.7936 9.44084 14.4262 9.07348 13.9539 8.60117C16.3155 7.18423 19.0444 6.29209 21.9832 6.29209V6.23961ZM34.1059 11.9598C35.0505 13.1144 35.7852 14.3739 36.415 15.7383V15.8958C36.2051 16.2631 35.8377 16.473 35.2604 17.0503C33.791 18.5197 33.5811 15.9482 32.9514 15.4235C32.2691 14.7937 29.8026 15.5284 29.4877 14.7412C29.1204 13.7966 32.1117 12.5371 34.1059 11.9598Z" fill="white"/>
+                            </svg>                            
+                    </div>
+                    <div class="tracker-node-container">
+                        <div class="tracker-node"></div>
+                        <div class="tracker-node"></div>
+                        <div class="tracker-node"></div>
+                    </div>
+                </div>
+                <div data-country-tracker class="progress-tracker-container">
+                    <div data-tracker-icon class="tracker-icon-container">
+                        <svg class="tracker-icon" width="33" height="43" viewBox="0 0 33 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.6934 0.991699C7.98191 0.991699 0.949707 8.0239 0.949707 16.7354C0.949707 27.2313 16.6934 42.975 16.6934 42.975C16.6934 42.975 32.4372 27.2313 32.4372 16.7354C32.4372 8.0239 25.405 0.991699 16.6934 0.991699ZM16.6934 6.23961C22.5186 6.23961 27.1893 10.9627 27.1893 16.7354C27.1893 22.5606 22.5186 27.2313 16.6934 27.2313C10.9207 27.2313 6.19762 22.5606 6.19762 16.7354C6.19762 10.9627 10.9207 6.23961 16.6934 6.23961Z" fill="white"/>
+                            </svg>
+                    </div>
+                    <div class="tracker-node-container">
+                        <div class="tracker-node"></div>
+                        <div class="tracker-node"></div>
+                        <div class="tracker-node "></div>
+                    </div>
+                </div>
+                <div data-capital-tracker class="progress-tracker-container">
+                    <div data-tracker-icon class="tracker-icon-container">
+                        <svg class="tracker-icon" width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21.404 0.991699L16.1561 16.7354H0.412354L13.5321 27.2313L8.28422 42.975L21.404 32.4792L34.5238 42.975L29.2759 27.2313L42.3956 16.7354H26.6519L21.404 0.991699Z" fill="white"/>
+                            </svg>
+                    </div>
+                    <div class="tracker-node-container">
+                        <div class="tracker-node"></div>
+                        <div class="tracker-node"></div>
+                        <div class="tracker-node"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- <img src="flags/4x3/dz.svg" alt="flag-icon" class="flag"> -->
+
+    <div class="keyboard-container">    
+        <div class="keyboard" data-keybaord>
+            <button class="key" data-key="Q">Q</button>
+            <button class="key" data-key="W">W</button>
+            <button class="key" data-key="E">E</button>
+            <button class="key" data-key="R">R</button>
+            <button class="key" data-key="T">T</button>
+            <button class="key" data-key="Y">Y</button>
+            <button class="key" data-key="U">U</button>
+            <button class="key" data-key="I">I</button>
+            <button class="key" data-key="O">O</button>
+            <button class="key" data-key="P">P</button>
+            <div class="space"></div>
+            <button class="key" data-key="A">A</button>
+            <button class="key" data-key="S">S</button>
+            <button class="key" data-key="D">D</button>
+            <button class="key" data-key="F">F</button>
+            <button class="key" data-key="G">G</button>
+            <button class="key" data-key="H">H</button>
+            <button class="key" data-key="J">J</button>
+            <button class="key" data-key="K">K</button>
+            <button class="key" data-key="L">L</button>
+            <div class="space"></div>
+            <button data-enter class="key large">Enter</button>
+            <button class="key" data-key="Z">Z</button>
+            <button class="key" data-key="X">X</button>
+            <button class="key" data-key="C">C</button>
+            <button class="key" data-key="V">V</button>
+            <button class="key" data-key="B">B</button>
+            <button class="key" data-key="N">N</button>
+            <button class="key" data-key="M">M</button>
+            <button data-delete class="key large">
+                <svg data-delete width="25" height="15" viewBox="0 0 25 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.5 4.97256e-08H8.0181C7.68974 -6.54544e-05 7.36459 0.0645866 7.06123 0.19026C6.75788 0.315934 6.48226 0.500166 6.25015 0.732422L0.366208 6.61602C-0.122069 7.1043 -0.122069 7.8957 0.366208 8.38359L6.25015 14.2676C6.71889 14.7363 7.35483 15 8.01771 15H22.5C23.8809 15 25 13.8809 25 12.5V2.5C25 1.11914 23.8809 4.97256e-08 22.5 4.97256e-08ZM19.1918 9.92422C19.436 10.1684 19.436 10.5641 19.1918 10.8082L18.3083 11.6918C18.0641 11.9359 17.6684 11.9359 17.4243 11.6918L15.0001 9.26758L12.5759 11.6918C12.3317 11.9359 11.936 11.9359 11.6919 11.6918L10.8083 10.8082C10.5642 10.5641 10.5642 10.1684 10.8083 9.92422L13.2325 7.5L10.8083 5.07578C10.5642 4.83164 10.5642 4.43594 10.8083 4.1918L11.6919 3.3082C11.936 3.06406 12.3317 3.06406 12.5759 3.3082L15.0001 5.73242L17.4243 3.3082C17.6684 3.06406 18.0641 3.06406 18.3083 3.3082L19.1918 4.1918C19.436 4.43594 19.436 4.83164 19.1918 5.07578L16.7676 7.5L19.1918 9.92422Z" fill="white"/>
+                </svg>                        
+            </button>
+            <div class="space-large"></div>
+            <button data-space class="key space" data-key=" ">
+                <svg width="40" height="13" viewBox="0 0 40 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.53846 0C2.38813 0 3.07692 0.684741 3.07692 1.52941V9.94118H36.9231V1.52941C36.9231 0.684741 37.6119 0 38.4615 0C39.3112 0 40 0.684741 40 1.52941V10.7059C40 11.9729 38.9668 13 37.6923 13H2.30769C1.03319 13 0 11.9729 0 10.7059V1.52941C0 0.684741 0.688793 0 1.53846 0Z" fill="white"/>
+                    </svg>
+            </button>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

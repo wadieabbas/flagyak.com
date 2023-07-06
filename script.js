@@ -174,6 +174,7 @@ function getGameState() {
     return true;
   } else {
     localStorage.removeItem(LOCAL_STORAGE_NAME);
+    guessInput.value = "";
   }
 }
 

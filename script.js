@@ -114,10 +114,11 @@ let GAME_STATE_OBJ = {
   winStatus: "",
 };
 
-const offsetFromDate = new Date(2023, 06, 03);
-const msOffset = Date.now() - offsetFromDate;
-const dayOffset = msOffset / 1000 / 60 / 60 / 24;
-const todaysDate = new Date();
+let offsetFromDate = new Date(2023, 0o6, 0o3);
+let msOffset = new Date(2024, 0o7, 25) - offsetFromDate;
+let dayOffset = msOffset / 1000 / 60 / 60 / 24;
+console.log(dayOffset);
+let todaysDate = new Date();
 
 let todaysFlag;
 let prompt = "";
@@ -125,6 +126,7 @@ let guessText = "";
 let scoreText = "";
 let emojiList = [];
 let emojiString = "";
+
 // INIT
 
 initialize(GAME_STATE_OBJ);
@@ -195,6 +197,7 @@ async function getTodaysFlag() {
     }
     const res = await response.json();
     const flagOBJ = res[getNumber(res.length)];
+    console.log(flagOBJ);
     return flagOBJ;
   } catch (error) {
     console.error(`Could not fetch countries object: ${error}`);
@@ -202,19 +205,27 @@ async function getTodaysFlag() {
 }
 
 function getNumber(listLength) {
-  if (dayOffset <= listLength) {
+  if (listLength <= 0) {
+    throw new Error("List length must be greater than 0.");
+  }
+
+  // Get today's date
+  let todaysDate = new Date();
+  let day = todaysDate.getDate();
+  let month = todaysDate.getMonth();
+  let year = todaysDate.getFullYear();
+
+  // Calculate the day offset from a base date (e.g., start of the year)
+  let baseDate = new Date(year, 0, 1); // Start of the year
+  let msOffset = todaysDate - baseDate; // Milliseconds since start of the year
+  let dayOffset = msOffset / (1000 * 60 * 60 * 24); // Convert to days
+
+  // If the day offset is less than the list length, return it
+  if (dayOffset < listLength) {
     return Math.floor(dayOffset);
   } else {
-    let todaysDate = new Date();
-    let day = todaysDate.getDate();
-    let month = todaysDate.getMonth();
-    let year = todaysDate.getFullYear();
-
-    offsetFromDate = new Date(year, month, day);
-    msOffset = Date.now() - offsetFromDate;
-    dayOffset = msOffset / 1000 / 60 / 60 / 24;
-    todaysDate = new Date();
-    return Math.floor(dayOffset);
+    // Otherwise, wrap around using modulo
+    return Math.floor(dayOffset) % listLength;
   }
 }
 
@@ -435,15 +446,12 @@ function displayPrompt(gameStatusObj) {
   ) {
     prompt = `Partial win, you got ${gameStatusObj.solvedCounter} out of ${tempListLength} correct.`;
     guessPrompt.textContent = `${prompt}`;
-  } else if (gameStatusObj.gameStatus == "NOT_STARTED") {
-    prompt = "Guess the continent";
-    guessPrompt.textContent = `${prompt}`;
   } else {
     for (i in gameStatusObj.currentState) {
       if (gameStatusObj.currentState[i].status == "IN_PROGRESS") {
         ACTIVE_STATE_OBJ = gameStatusObj.currentState[i];
         prompt = ACTIVE_STATE_OBJ.sectionName;
-        guessPrompt.textContent = `Guess the ${prompt}`;
+        guessPrompt.innerHTML = `Guess the flag's <u><b>${prompt}</b></u>`;
         return;
       } else {
         prompt = "Aw, better luck tomorrow!";

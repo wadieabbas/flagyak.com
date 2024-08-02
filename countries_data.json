@@ -162,7 +162,7 @@
     "name": ["Turkmenistan"]
   },
   {
-    "capital": ["Porto-Novo"],
+    "capital": ["Porto Novo"],
     "code": "bj",
     "continent": ["Africa"],
     "flag_1x1": "assets/flags/1x1/bj.svg",
@@ -477,7 +477,7 @@
     "name": ["El Salvador"]
   },
   {
-    "capital": ["Fort-de-France"],
+    "capital": ["Fort de France", "Fort France"],
     "code": "mq",
     "continent": ["North America"],
     "flag_1x1": "assets/flags/1x1/mq.svg",
@@ -1902,15 +1902,6 @@
     "flag_4x3": "assets/flags/4x3/xk.svg",
     "iso": false,
     "name": ["Kosovo"]
-  },
-  {
-    "capital": ["Jerusalem"],
-    "code": "il",
-    "continent": ["Asia"],
-    "flag_1x1": "assets/flags/1x1/il.svg",
-    "flag_4x3": "assets/flags/4x3/il.svg",
-    "iso": true,
-    "name": ["Israel"]
   },
   {
     "capital": ["Washington DC"],

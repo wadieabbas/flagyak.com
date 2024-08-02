@@ -117,7 +117,6 @@ let GAME_STATE_OBJ = {
 let offsetFromDate = new Date(2023, 0o6, 0o3);
 let msOffset = new Date(2024, 0o7, 25) - offsetFromDate;
 let dayOffset = msOffset / 1000 / 60 / 60 / 24;
-console.log(dayOffset);
 let todaysDate = new Date();
 
 let todaysFlag;
@@ -197,7 +196,6 @@ async function getTodaysFlag() {
     }
     const res = await response.json();
     const flagOBJ = res[getNumber(res.length)];
-    console.log(flagOBJ);
     return flagOBJ;
   } catch (error) {
     console.error(`Could not fetch countries object: ${error}`);

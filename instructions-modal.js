@@ -3,7 +3,7 @@ const closeModalButton = document.querySelector("[data-im-x-button]");
 const insModal = document.querySelector("[data-im]");
 const insModalContent = document.querySelector("[data-im-content]");
 const emailButton = document.querySelector("[data-im-email-button]");
-
+const dateText = document.querySelector("[data-date-text]");
 // Add Cookie - Expires one month post original creation
 
 function setCookie(cname, cvalue) {
@@ -40,6 +40,13 @@ function checkInsModalStatus() {
 }
 
 window.addEventListener("load", checkInsModalStatus);
+
+function displayDate() {
+  year = new Date().getFullYear();
+  dateText.textContent = year;
+}
+
+displayDate();
 
 // Modal Interaction
 

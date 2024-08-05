@@ -20,6 +20,7 @@ const gomRow2 = document.querySelectorAll("[data-gom-row2]");
 const gomRow3 = document.querySelectorAll("[data-gom-row3]");
 const gomCloseButton = document.querySelector("[data-gom-x-button]");
 const gomShareButton = document.querySelector("[data-gom-share-button]");
+const gomDate = document.querySelector("[data-gom-date]");
 
 const checkEmoji = "assets/emojis/check-emoji.png";
 const xEmoji = "assets/emojis/cross-mark.png";
@@ -529,6 +530,8 @@ function clearUserText() {
 // UI FUNCTIONS - MODALS
 
 function gomRenderContent() {
+  displayDate();
+
   const correctCount = GAME_STATE_OBJ.solvedCounter;
   scoreText = ` got ${correctCount}/3 correct`;
   gomSubtitle.textContent = "You" + scoreText + "!";
@@ -550,6 +553,11 @@ function gomRenderContent() {
       listItem.firstElementChild.src = emojiSrc;
     }
   }
+}
+
+function displayDate() {
+  year = new Date().getFullYear();
+  gomDate.textContent = year;
 }
 
 function shareText() {
